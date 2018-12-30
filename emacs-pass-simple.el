@@ -1,3 +1,15 @@
+;;; emacs-pass-simple.el --- Interface with pass 
+
+;; Copyright (C) 2018  Justin Taft
+
+;; Author: Justin Taft <justin@justin-taft.com>
+;; Maintainer: Justin Taft <justin@justin-taft.com>
+;; Created: 28 July 2018 
+;; Keywords: comm, tools
+;; Version: 0.0.1
+;; Homepage: https://github.com/justintaft/emacs-pass-simple
+
+;; This file is NOT part of GNU Emacs.
 
 (defvar emacs-pass-simple-mode-hook nil)
 
@@ -30,4 +42,4 @@
        
 
 
-
+;;; emacs-pass-simple.el ends here
