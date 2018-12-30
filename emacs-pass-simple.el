@@ -11,6 +11,8 @@
 
 ;; This file is NOT part of GNU Emacs.
 
+(provide 'emacs-pass-simple)
+
 (defvar emacs-pass-simple-mode-hook nil)
 
 (define-derived-mode emacs-pass-simple-mode fundamental-mode "emacs-pass-simple"
