@@ -5,6 +5,15 @@ Copy pass entires to clipboard easily
 OSX keybaord can be configured to launch emacs plugin. Create an automator service which runs run.sh, and bind servce to key.
 
 
+Installation with quelpa: 
+
+```
+(use-package emacs-pass-simple :quelpa (emacs-pass-simple :fetcher github :repo "justintaft/emacs-pass-simple" :files ("*.el" "Emacs Pass Simple.app")))
+```
+
+
+
+
 OSX SSH and GPG Integration Instructions:
 
 - Add to ~/.bash_profile to auto-start gpg agent
