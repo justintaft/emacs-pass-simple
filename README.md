@@ -1,4 +1,4 @@
-Copy pass entires to clipboard easily
+Autotypes pass enties
 
 ![screenshot](screenshot.png)
 
