@@ -1,6 +1,7 @@
+
 ;;; emacs-pass-simple.el --- Interface with pass 
 
-;; Copyright (C) 2018  Justin Taft
+;; Copyright (C) 2018 Justin Taft
 
 ;; Author: Justin Taft <justin@justin-taft.com>
 ;; Maintainer: Justin Taft <justin@justin-taft.com>
@@ -21,13 +22,13 @@
 
 (defun jt-emacs-pass-simple-copy-pass-to-clipboard ()
   (interactive)
-  (let ((pass-name (string-trim (thing-at-point 'line t))))
-    (message "Copying password to clipboard, ctrl-g to stop")
-    (call-process "pass" nil "what" t "show" "--clip" pass-name)
+  (let* ((pass-name (string-trim (thing-at-point 'line t)))
+        (base-location (file-name-directory (find-library-name "emacs-pass-simple")))
+        (pass-applescript (concat base-location "Emacs Pass Simple.app")))
+    (call-process "open" nil "emacs-simple-pass" t pass-applescript "--args" "-stringArg" pass-name)
     (kill-buffer-and-window)))
 
-
-(defun jt-emacs-pass-simple-show-passwords ()
+(defun jt-emacs-pass-simple-list-passwords ()
   (interactive)
   (pop-to-buffer (get-buffer-create "emacs-pass-simple"))
   (emacs-pass-simple-mode)
@@ -37,11 +38,10 @@
   (call-process "sh" nil "emacs-pass-simple" t "-c" "find ~/.password-store -name '*.gpg' | sed 's/.*password-store\\///g' | sed 's/\.gpg$//g'")
   (setq buffer-read-only t)
   (swiper))
-  
 
 (define-key emacs-pass-simple-mode-map (kbd "<RET>") 'jt-emacs-pass-simple-copy-pass-to-clipboard)
-(evil-define-key 'normal emacs-pass-simple-mode-map (kbd "q") 'kill-buffer-and-window)
+(define-key emacs-pass-simple-mode-map (kbd "q") 'kill-buffer-and-window)
+;(evil-define-key 'normal emacs-pass-simple-mode-map (kbd "q") 'kill-buffer-and-window)
        
-
 
 ;;; emacs-pass-simple.el ends here

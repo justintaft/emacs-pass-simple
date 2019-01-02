@@ -41,3 +41,8 @@ source ~/.gpg-agent-info
 ```
 
 References: https://www.linode.com/docs/security/authentication/gpg-key-for-ssh-authentication/ 
+
+
+- Fix apple events errors
+
+tccutil reset AppleEvents
