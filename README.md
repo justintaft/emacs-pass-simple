@@ -2,6 +2,8 @@ Autotypes pass enties
 
 ![screenshot](screenshot.png)
 
+**Warning: This project does NOT prevent malicious actors from stealing passwords.**
+
 Installation with quelpa: 
 
 ```
