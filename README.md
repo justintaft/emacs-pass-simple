@@ -2,9 +2,6 @@ Autotypes pass enties
 
 ![screenshot](screenshot.png)
 
-OSX keybaord can be configured to launch emacs plugin. Create an automator service which runs run.sh, and bind servce to key.
-
-
 Installation with quelpa: 
 
 ```
